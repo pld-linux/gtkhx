@@ -1,45 +1,56 @@
-
-Summary: GtkHx is a GTK+ version of Hx, a UNIX Hotline Client.
-Name: gtkhx
-Version: 0.8.10
-Release: 1
-Group: Applications
-Copyright: GPL
-Packager: misha@nasledov.com
-URL: http://gtkhx.sourceforge.net/
-Source0: http://gtkhx.sourceforge.net/files/gtkhx-0.8.10.tar.gz
+Summary:	GtkHx is a GTK+ version of Hx, a UNIX Hotline Client.
+Name:		gtkhx
+Version:	0.8.10
+Release:	1
+Group:		Applications
+Group(de):	Applikationen
+Group(pl):	Aplikacje
+License:	GPL
+URL:		http://gtkhx.sourceforge.net/
+Source0:	http://gtkhx.sourceforge.net/files/%{name}-%{version}.tar.gz
 #Provides: none
-Requires: gtk+, glib, gdk-pixbuf
+Requires:	gtk+
+Requires:	glib
+Requires:	gdk-pixbuf
 #Conflicts: none
-BuildRoot: /tmp/gtkhx-0.8.10
-%Description
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+
+%description
 GtkHx is a GTK+ version of Hx, a UNIX Hotline Client.
-%Prep
+
+%prep
+
 %setup
-%Build
+
+%build
 ./configure
-make
-%Install
+
+
+%{__make}
+%install
 rm -rf $RPM_BUILD_ROOT
-mkdir -p $RPM_BUILD_ROOT/usr/bin/
-mkdir -p $RPM_BUILD_ROOT/usr/share/gtkhx/sounds
+
+install -d $RPM_BUILD_ROOT/usr/bin
+install -d $RPM_BUILD_ROOT/usr/share/gtkhx/sounds
 make install prefix=$RPM_BUILD_ROOT/usr
 #install gtkhx_pixmap.png $RPM_BUILD_ROOT/usr/share/gtkhx/
 
 %clean
 rm -rf $RPM_BUILD_ROOT
+
 %files
-%defattr(-,root,root)
-/usr/bin/gtkhx
-/usr/share/gtkhx/icons.rsrc
-/usr/share/gtkhx/sounds/chatinvite.aiff
-/usr/share/gtkhx/sounds/chatpost.aiff
-/usr/share/gtkhx/sounds/error.aiff
-/usr/share/gtkhx/sounds/filedone.aiff
-/usr/share/gtkhx/sounds/join.aiff
-/usr/share/gtkhx/sounds/logged-in.aiff
-/usr/share/gtkhx/sounds/message.aiff
-/usr/share/gtkhx/sounds/newspost.aiff
-/usr/share/gtkhx/sounds/part.aiff
-/usr/share/gtkhx/gtkhx_pixmap.png
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_bindir}/gtkhx
+%{_datadir}/gtkhx/icons.rsrc
+%{_datadir}/gtkhx/sounds/chatinvite.aiff
+%{_datadir}/gtkhx/sounds/chatpost.aiff
+%{_datadir}/gtkhx/sounds/error.aiff
+%{_datadir}/gtkhx/sounds/filedone.aiff
+%{_datadir}/gtkhx/sounds/join.aiff
+%{_datadir}/gtkhx/sounds/logged-in.aiff
+%{_datadir}/gtkhx/sounds/message.aiff
+%{_datadir}/gtkhx/sounds/newspost.aiff
+%{_datadir}/gtkhx/sounds/part.aiff
+%{_datadir}/gtkhx/gtkhx_pixmap.png
+
 %doc README COPYING ChangeLog BUGS AUTHORS TODO DOCUMENTATION
