@@ -6,6 +6,7 @@ Release:	1
 Group:		X11/Applications
 License:	GPL
 Source0:	http://gtkhx.sourceforge.net/files/%{name}-%{version}.tar.gz
+# Source0-md5:	3c8a9747da832c8121bfd98df790e35b
 URL:		http://gtkhx.sourceforge.net/
 BuildRequires:	gtk+-devel
 Requires:	gdk-pixbuf-devel
