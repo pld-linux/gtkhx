@@ -32,7 +32,7 @@ rm -rf $RPM_BUILD_ROOT
 
 install -d $RPM_BUILD_ROOT/usr/bin
 install -d $RPM_BUILD_ROOT/usr/share/gtkhx/sounds
-make install prefix=$RPM_BUILD_ROOT/usr
+%{__make} install prefix=$RPM_BUILD_ROOT/usr
 #install gtkhx_pixmap.png $RPM_BUILD_ROOT/usr/share/gtkhx/
 
 %clean
