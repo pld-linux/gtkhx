@@ -36,14 +36,12 @@ install -d $RPM_BUILD_ROOT{%{_bindir},%{_datadir}/gtkhx/sounds}
 %{__make} install prefix=$RPM_BUILD_ROOT%{_prefix}
 #install gtkhx_pixmap.png $RPM_BUILD_ROOT%{_datadir}/gtkhx
 
-gzip -9nf README ChangeLog BUGS AUTHORS TODO DOCMENTATION
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc {README,ChangeLog,BUGS,AUTHORS,TODO,DOCUMENTATION}.gz
+%doc README ChangeLog BUGS AUTHORS TODO DOCMENTATION
 %attr(755,root,root) %{_bindir}/gtkhx
 %dir %{_datadir}/gtkhx
 %{_datadir}/gtkhx/icons.rsrc
