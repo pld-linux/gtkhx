@@ -1,15 +1,15 @@
 Summary:	GtkHx is a GTK+ version of Hx, a UNIX Hotline Client
 Summary(pl):	GtkHx - wersja GTK+ uniksowego klienta Hotline Hx
 Name:		gtkhx
-Version:	0.8.10
+Version:	0.9.4
 Release:	1
 Group:		X11/Applications
 License:	GPL
 Source0:	http://gtkhx.sourceforge.net/files/%{name}-%{version}.tar.gz
-# Source0-md5:	3c8a9747da832c8121bfd98df790e35b
+# Source0-md5:	d61d7dc2df66d934464e0bb8cd0fe45e
 URL:		http://gtkhx.sourceforge.net/
 BuildRequires:	gtk+-devel
-Requires:	gdk-pixbuf-devel
+BuildRequires:	gdk-pixbuf-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 
@@ -35,12 +35,14 @@ install -d $RPM_BUILD_ROOT{%{_bindir},%{_datadir}/gtkhx/sounds}
 %{__make} install prefix=$RPM_BUILD_ROOT%{_prefix}
 #install gtkhx_pixmap.png $RPM_BUILD_ROOT%{_datadir}/gtkhx
 
+%find_lang gtkhx
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files
+%files -f gtkhx.lang
 %defattr(644,root,root,755)
-%doc README ChangeLog BUGS AUTHORS TODO DOCMENTATION
+%doc README ChangeLog BUGS AUTHORS TODO DOCUMENTATION
 %attr(755,root,root) %{_bindir}/gtkhx
 %dir %{_datadir}/gtkhx
 %{_datadir}/gtkhx/icons.rsrc
@@ -54,4 +56,5 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/gtkhx/sounds/message.aiff
 %{_datadir}/gtkhx/sounds/newspost.aiff
 %{_datadir}/gtkhx/sounds/part.aiff
-%{_datadir}/gtkhx/gtkhx_pixmap.png
+#%{_datadir}/gtkhx/gtkhx_pixmap.png
+%{_mandir}/man1/*
