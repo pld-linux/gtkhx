@@ -11,8 +11,6 @@ BuildRequires:	gtk+-devel
 Requires:	gdk-pixbuf-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_prefix		/usr/X11R6
-%define		_mandir		%{_prefix}/man
 
 %description
 GtkHx is a GTK+ version of Hx, a UNIX Hotline Client.
