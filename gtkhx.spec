@@ -4,11 +4,6 @@ Name:		gtkhx
 Version:	0.8.10
 Release:	1
 Group:		X11/Applications
-Group(de):	X11/Applikationen
-Group(es):	X11/Aplicaciones
-Group(pl):	X11/Aplikacje
-Group(pt_BR):	X11/Aplicações
-Group(pt):	X11/Aplicações
 License:	GPL
 Source0:	http://gtkhx.sourceforge.net/files/%{name}-%{version}.tar.gz
 URL:		http://gtkhx.sourceforge.net/
