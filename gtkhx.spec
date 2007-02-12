@@ -1,5 +1,5 @@
 Summary:	GtkHx is a GTK+ version of Hx, a UNIX Hotline Client
-Summary(pl):	GtkHx - wersja GTK+ uniksowego klienta Hotline Hx
+Summary(pl.UTF-8):   GtkHx - wersja GTK+ uniksowego klienta Hotline Hx
 Name:		gtkhx
 Version:	0.9.4
 Release:	2
@@ -16,7 +16,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 GtkHx is a GTK+ version of Hx, a UNIX Hotline Client.
 
-%description -l pl
+%description -l pl.UTF-8
 GtkHx to wersja pod GTK+ programu Hx - uniksowego klienta Hotline.
 
 %prep
